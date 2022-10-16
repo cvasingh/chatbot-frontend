@@ -1,0 +1,118 @@
+textarea,input {
+  border: none;
+  outline: none;
+  }
+.top-60{
+  top: 60px !important;
+}
+.ska-bg {
+  background-color: #e8fff7;
+}
+.shadow{
+  box-shadow: 0 0 4px 0px rgba(18, 74, 51, 0.25);
+}
+.glass {
+  background: linear-gradient(315deg, rgba(224, 224, 224, .4), rgba(255, 255, 255, .6));
+  box-shadow: 0 0 24px -1px rgba(20, 87, 49, 0.25);
+  width: 70%;
+  min-height: 70%;
+  overflow: hidden;
+  backdrop-filter: blur(120px);
+  margin: 80px auto;
+  border-radius: 35px;
+}
+.fullScreen{
+  height: 90vh;
+  position: relative;
+}
+.chatBotButton{
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
+  padding: 10px;
+  border-radius: 50%;
+  border-color: #026c62;
+  color: #026c62;
+  font-weight: 600;
+}
+.chatBotDiv{
+  position: absolute;
+  bottom: 55px;
+  right: 50px;
+}
+
+.react-chatbot-kit-chat-inner-container{
+  box-shadow: 0 0 24px -1px rgb(53 101 224 / 25%);
+  border-radius: 10px;
+}
+
+
+.input-group-text {
+  background-color: rgb(233, 250, 245) !important;
+}
+
+.form-control:focus,
+.form-check-input:focus,
+.form-select:focus {
+  border-color: #86fed8;
+  -webkit-box-shadow: 0 0 0 0.25rem rgba(var(--bs-cfs-primary-rgb), .7);
+  box-shadow: 0 0 0 0.25rem rgba(var(--bs-cfs-primary-rgb), .5);
+}
+
+.form-check-input:checked {
+  background-color: var(--bs-cfs-primary);
+  border-color: var(--bs-cfs-primary);
+}
+
+.page-link:hover {
+  color: var(--bs-cfs-primary);
+}
+
+.page-link:focus {
+  color: var(--bs-cfs-primary);
+  -webkit-box-shadow: 0 0 0 0.25rem var(--bs-cfs-primary-light);
+  box-shadow: 0 0 0 0.25rem var(--bs-cfs-primary-light);
+}
+
+.page-item.active .page-link {
+  background-color: var(--bs-cfs-primary);
+  border-color: var(--bs-cfs-primary);
+}
+
+.page-item.disabled .page-link {
+  color: #6c7d77;
+  border-color: #dee6e3;
+}
+
+
+.table-ska {
+  --bs-table-bg: rgb(233, 250, 239) !important;
+  --bs-table-striped-bg: rgb(222, 252, 237) !important;
+  --bs-table-striped-color: #000 !important;
+  --bs-table-active-bg: #dfe1e0 !important;
+  --bs-table-active-color: #000 !important;
+  --bs-table-hover-bg: #befadcb9 !important;
+  --bs-table-hover-color: #000 !important;
+  color: #000;
+  border-color: #dfe1e0;
+}
+tr >td,th {
+  border-left: 1px solid #befadcb9;
+  border-right: 1px solid #befadcb9;
+}
+
+.dropdown-menu[data-bs-popper] {
+  top: 100%;
+  left: -60px;
+  margin-top: 0.125rem;
+}
+
+.ska-box {
+  border-radius: 5px;
+  background: linear-gradient(125deg, #fff, rgb(255, 248, 255));
+  box-shadow: 0 0 15px rgba(98, 99, 98, 0.205);
+  margin: 10px;
+  padding: 10px 15px;
+}
