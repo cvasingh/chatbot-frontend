@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Axios from "axios";
 import Config from '../Config';
@@ -26,6 +26,17 @@ export default function Register() {
             image: 'https://via.placeholder.com/150',
         });
     const [style, setStyle] = useState({ otpCSS: '', passwordCSS: '' })
+    useEffect(() => {
+        const delayDebounceFn = setTimeout(() => {
+            if (details.password !== details.password1 && details.password1 !== '') {
+                setStyle({ passwordCSS: 'border-danger is-invalid' });
+                noti.addNewMessage('Passwords Not Match', 'danger');
+            } else {
+                setStyle({ passwordCSS: '' });
+            }
+        }, 2000)
+        return () => clearTimeout(delayDebounceFn)
+    }, [details.password, details.password1])
 
     const handleEmail = (e) => {
         Axios.post(`${Config.IP}/auth/checkEmail`, details)
@@ -112,7 +123,7 @@ export default function Register() {
                 </form>}
             {statusForm === 'details' &&
                 // {/* details form */}
-                <form method='POST' onSubmit={handleDetails}>
+                <form method='POST' onSubmit={handleDetails} autocomplete="off">
                     <div className="row mb-3">
                         <div className="col">
                             <input type="text" placeholder="First Name" autoFocus
@@ -130,7 +141,7 @@ export default function Register() {
                         </div>
                     </div>
                     <div className="input-group mb-3">
-                        <input type="tel" pattern="[5-9]{1}[0-9]{9}" placeholder="Phone"
+                        <input type="tel" pattern="[5-9]{1}[0-9]{9}" placeholder="Phone" autocomplete="off"
                             className="form-control form-control-lg border-ska-primary border-2"
                             value={details.phone} onChange={(event) => setDetails({
                                 ...details, phone: event.target.value
@@ -138,7 +149,7 @@ export default function Register() {
                     </div>
                     <div className="row mb-3">
                         <div className="col">
-                            <input type="password" placeholder="Password"
+                            <input type="password" placeholder="Password" autocomplete="new-password"
                                 className="form-control form-control-lg border-ska-primary border-2 "
                                 value={details.password} onChange={(event) => setDetails({
                                     ...details, password: event.target.value
@@ -146,7 +157,7 @@ export default function Register() {
                         </div>
                         <div className="col">
                             <input type="password" placeholder="Password"
-                                className="form-control form-control-lg border-ska-primary border-2 border-danger is-invalid"
+                                className={`form-control form-control-lg border-ska-primary border-2 ${style.passwordCSS}`}
                                 value={details.password1} onChange={(event) => setDetails({
                                     ...details, password1: event.target.value
                                 })} required />
